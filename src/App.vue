@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+import Departments from '@/components/departments/DepartmentForms.vue'
+import Profession from '@/components/profession/ProfessionForms.vue'
 </script>
 
 <template>
@@ -13,7 +14,8 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    <Profession />
+    <Departments />
   </main>
 </template>
 
