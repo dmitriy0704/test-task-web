@@ -4,15 +4,15 @@ import GetForm from './GetProfessions.vue'
 import CreateForm from "./CreateProfession.vue";
 </script>
 
-<template>
+<template >
   <WelcomeItem>
     <template #heading>
       <div class="head">
         <h2>Профессии</h2>
       </div>
     </template>
-    <template #default>
 
+    <template #default>
       <div class="form-wrap">
         <div class="item">
           <CreateForm/>
@@ -22,10 +22,14 @@ import CreateForm from "./CreateProfession.vue";
         </div>
       </div>
     </template>
+
   </WelcomeItem>
 </template>
 
 <style>
+
+
+
 .head{
   display: flex;
   justify-content: center;

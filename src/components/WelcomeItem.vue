@@ -16,7 +16,10 @@
 .item {
   margin-top: 2rem;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
+  width: 800px;
 }
 
 .details {

@@ -6,22 +6,37 @@ import EmployeeForms from "@/components/employees/EmployeeForms.vue";
 </script>
 
 <template>
-  <header>
-<!--    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />-->
-    <div class="wrapper">
-      <HelloWorld msg="Test Task Web App" />
-    </div>
-  </header>
+<!--  <header>-->
+<!--&lt;!&ndash;    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />&ndash;&gt;-->
+<!--    <div class="wrapper">-->
+<!--      <HelloWorld msg="Test Task Web App" />-->
+<!--    </div>-->
+<!--  </header>-->
 
   <main>
-    <Profession />
-    <Departments />
-    <EmployeeForms/>
+    <div class="container">
+      <Profession />
+      <Departments />
+      <EmployeeForms/>
+    </div>
+
 
   </main>
 </template>
 
 <style scoped>
+
+main{
+
+}
+
+main .container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 header {
   line-height: 1.5;
 }
