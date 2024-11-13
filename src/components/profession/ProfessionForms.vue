@@ -29,12 +29,13 @@ import CreateForm from "./CreateProfession.vue";
 <style>
 
 
-
 .head{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+
 }
 .form-wrap{
   display: flex;

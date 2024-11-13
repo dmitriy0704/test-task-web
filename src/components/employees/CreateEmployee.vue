@@ -7,8 +7,8 @@ export default {
   components: {},
   data() {
     return {
-
       prof_list: {},
+      dept_list: {},
       employee: {
         fio: '',
         description: '',
@@ -24,6 +24,12 @@ export default {
       );
       this.prof_list = data;
     },
+    async getDepartmentList() {
+      const {data} = await axios.get(
+          "http://localhost:8080/api/dept?list",
+      );
+      this.dept_list = data;
+    },
     handleSave() {
       this.isSaving = true
       axios.post('http://localhost:8080/api/empl', this.employee)
@@ -31,7 +37,8 @@ export default {
             this.isSaving = false
             this.employee.fio = ""
             this.employee.description = ""
-            // this.empl.profession = ""
+            this.employee.profession = ""
+            this.employee.department = ""
             return response
           })
           .catch(error => {
@@ -41,6 +48,7 @@ export default {
 
   beforeMount() {
     this.getProfessionList();
+    this.getDepartmentList();
   },
 
 };
@@ -54,7 +62,6 @@ export default {
   <div class="form">
 
       <form>
-
         <div class="form-group">
           <label htmlFor="name">ФИО</label>
           <br/>
@@ -88,6 +95,35 @@ export default {
           <br/>
           <br/>
         </div>
+
+
+        <div class="form-group">
+          <div> Отдел: </div>
+          <select v-model="employee.department">
+            <option disabled value="">Выберете отдел</option>
+            <option v-for="(item, index) in dept_list"
+                    :key="index"
+                    class="list-group-item">
+              {{item.name}}
+            </option>
+          </select>
+          <input
+              style="display: none"
+              v-model="employee.department"
+              type="text"
+              class="form-control"
+              id="profession"
+              name="profession"/>
+          <br/>
+          <br/>
+        </div>
+
+
+
+
+
+
+
 
 
         <div class="form-group">

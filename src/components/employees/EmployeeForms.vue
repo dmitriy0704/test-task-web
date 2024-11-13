@@ -31,7 +31,8 @@ import CreateForm from "../employees/CreateEmployee.vue";
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-bottom: 30px;
+  margin-top: 50px;
+  margin-bottom: 15px;
 }
 .form-wrap{
   display: flex;
