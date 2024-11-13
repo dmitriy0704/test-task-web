@@ -8,7 +8,7 @@ import CreateForm from "./CreateProfession.vue";
   <WelcomeItem>
     <template #heading>
       <div class="head">
-        <h2>Отделы</h2>
+        <h2>Профессии</h2>
       </div>
     </template>
     <template #default>
@@ -34,8 +34,12 @@ import CreateForm from "./CreateProfession.vue";
 }
 .form-wrap{
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: flex-start;
+}
+
+.form-wrap div{
+  margin-right: 30px;
 }
 </style>
 

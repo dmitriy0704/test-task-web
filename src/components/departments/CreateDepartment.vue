@@ -10,6 +10,7 @@ export default {
     return {
       dept: {
         name: '',
+        description: ''
       },
       isSaving:false,
     };
@@ -21,6 +22,7 @@ export default {
           .then(response => {
             this.isSaving = false
             this.dept.name = ""
+            this.dept.description = ""
             return response
           })
           .catch(error => {});
@@ -39,7 +41,7 @@ export default {
       <div class="card-body">
         <form>
           <div class="form-group">
-            <label htmlFor="name">Название</label>
+            <label htmlFor="name">Наименование</label>
             <br/>
 
             <input
@@ -48,6 +50,20 @@ export default {
                 class="form-control"
                 id="name"
                 name="name"/>
+            <br/>
+            <br/>
+          </div>
+
+          <div class="form-group">
+            <label htmlFor="name">Примечание</label>
+            <br/>
+
+            <input
+                v-model="dept.description"
+                type="text"
+                class="form-control"
+                id="description"
+                name="description"/>
             <br/>
             <br/>
           </div>

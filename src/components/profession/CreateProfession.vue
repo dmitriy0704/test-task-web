@@ -41,7 +41,7 @@ export default {
       <div class="card-body">
         <form>
           <div class="form-group">
-            <label htmlFor="name">Название</label>
+            <label htmlFor="name">Наименование</label>
             <br/>
 
             <input
@@ -54,7 +54,7 @@ export default {
             <br/>
           </div>
           <div class="form-group">
-            <label htmlFor="">Описание</label>
+            <label htmlFor="">Примечание</label>
             <br/>
 
             <input

@@ -29,14 +29,14 @@ import CreateDept from "./CreateDepartment.vue";
 <style>
 .head{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   margin-bottom: 30px;
 }
 .form-wrap{
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 </style>
 
