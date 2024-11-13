@@ -2,12 +2,12 @@
 import HelloWorld from './components/HelloWorld.vue'
 import Departments from '@/components/departments/DepartmentForms.vue'
 import Profession from '@/components/profession/ProfessionForms.vue'
+import EmployeeForms from "@/components/employees/EmployeeForms.vue";
 </script>
 
 <template>
   <header>
 <!--    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />-->
-
     <div class="wrapper">
       <HelloWorld msg="Test Task Web App" />
     </div>
@@ -16,6 +16,8 @@ import Profession from '@/components/profession/ProfessionForms.vue'
   <main>
     <Profession />
     <Departments />
+    <EmployeeForms/>
+
   </main>
 </template>
 
