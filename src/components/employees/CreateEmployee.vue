@@ -62,12 +62,10 @@ export default {
   },
 
 };
-
 </script>
 
 
 <template>
-
   <div class="create-form-flex-container">
     <div class="flex-column">
       <div class="col-md-12">
@@ -77,16 +75,17 @@ export default {
 
         <form>
           <div class="form-group">
-            <label htmlFor="name">ФИО</label>
-            <br/>
-            <input
-                v-model="employee.fio"
-                type="text"
-                class="form-control"
-                id="fio"
-                name="fio"/>
-            <br/>
-            <br/>
+            <div>
+              <label htmlFor="name">ФИО</label>
+            </div>
+            <div>
+              <input
+                  v-model="employee.fio"
+                  type="text"
+                  class="form-control"
+                  id="fio"
+                  name="fio"/>
+            </div>
           </div>
 
           <div class="form-group">
@@ -106,11 +105,7 @@ export default {
                 class="form-control"
                 id="profession"
                 name="profession"/>
-            <br/>
-            <br/>
           </div>
-
-
           <div class="form-group">
             <div> Отдел:</div>
             <select v-model="employee.department">
@@ -128,22 +123,15 @@ export default {
                 class="form-control"
                 id="profession"
                 name="profession"/>
-            <br/>
-            <br/>
           </div>
-
-
           <div class="form-group">
             <label htmlFor="name">Примечание</label>
-            <br/>
             <input
                 v-model="employee.description"
                 type="text"
                 class="form-control"
                 id="description"
                 name="description"/>
-            <br/>
-            <br/>
           </div>
           <div class="form-group">
             <button
@@ -155,7 +143,6 @@ export default {
             </button>
           </div>
         </form>
-
       </div>
     </div>
     <div class="flex-column">
@@ -165,22 +152,21 @@ export default {
         </div>
         <div class="col-md-6">
           <ul class="list-group">
-            <li style="list-style: none; padding-bottom: 15px;" v-for="(item, index) in empl_list"
+            <li style="list-style: none; padding-bottom: 15px;"
+                v-for="(item, index) in empl_list"
                 :key="index"
                 class="list-group-item">
               {{ index + 1 }}.
               - <i>ФИО:</i> <b>{{ item.fio }}</b>
               - <i>Профессия:</i> <b>{{ item.profession }}</b>
               - <i>Отдел:</i> <b>{{ item.department }}</b>
-              - <i>Примечание:</i>  {{item.description}}
+              - <i>Примечание:</i> {{ item.description }}
             </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-
-
 
 
 </template>

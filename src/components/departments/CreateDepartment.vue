@@ -50,33 +50,35 @@ export default {
       </div>
       <form>
         <div class="form-group">
-          <label htmlFor="name">Наименование</label>
-          <br/>
+          <div>
+            <label htmlFor="name">Наименование</label>
+          </div>
+          <div>
+            <input
+                v-model="dept.name"
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"/>
+          </div>
 
-          <input
-              v-model="dept.name"
-              type="text"
-              class="form-control"
-              id="name"
-              name="name"/>
-          <br/>
-          <br/>
         </div>
 
         <div class="form-group">
-          <label htmlFor="name">Примечание</label>
-          <br/>
+          <div>
+            <label htmlFor="name">Примечание</label>
+          </div>
+          <div>
+            <input
+                v-model="dept.description"
+                type="text"
+                class="form-control"
+                id="description"
+                name="description"/>
+          </div>
 
-          <input
-              v-model="dept.description"
-              type="text"
-              class="form-control"
-              id="description"
-              name="description"/>
-          <br/>
-          <br/>
+
         </div>
-
         <button
             @click="handleSave()"
             :disabled="isSaving"
@@ -99,7 +101,8 @@ export default {
                 v-for="(item, index) in dept_list"
                 :key="index"
                 class="list-group-item">
-              {{ index + 1 }}. - <i>Наименование:</i> <b>{{ item.name }}</b> - <i>Примечание:</i>  {{item.description}}
+              {{ index + 1 }}. - <i>Наименование:</i> <b>{{ item.name }}</b> -
+              <i>Примечание:</i> {{ item.description }}
             </li>
           </ul>
         </div>
@@ -108,7 +111,6 @@ export default {
 
     </div>
   </div>
-
 
 
 </template>
