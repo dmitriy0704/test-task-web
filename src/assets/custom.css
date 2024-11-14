@@ -24,6 +24,17 @@
 
 }
 
+.create-form-flex-container .flex-column .form-group select {
+
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 0;
+    border: none;
+    height: 25px;
+    width: 160px;
+
+}
+
 .create-form-flex-container .flex-column button {
 
     padding: 10px 15px 10px;
