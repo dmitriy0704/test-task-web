@@ -17,9 +17,9 @@ import CreateForm from "../employees/CreateEmployee.vue";
         <div class="item">
           <CreateForm/>
         </div>
-        <div class="item">
-          <GetForm/>
-        </div>
+<!--        <div class="item">-->
+<!--          <GetForm/>-->
+<!--        </div>-->
       </div>
     </template>
   </WelcomeItem>

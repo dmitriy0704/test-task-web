@@ -19,7 +19,7 @@
   flex-direction: column;
   justify-content: center;
   position: relative;
-  width: 800px;
+  width: 1024px;
 }
 
 .details {

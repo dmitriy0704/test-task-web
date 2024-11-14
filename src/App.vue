@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import Departments from '@/components/departments/DepartmentForms.vue'
-import Profession from '@/components/profession/ProfessionForms.vue'
+import Profession from '@/components/professions/ProfessionForms.vue'
 import EmployeeForms from "@/components/employees/EmployeeForms.vue";
 </script>
 

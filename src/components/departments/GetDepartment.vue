@@ -28,9 +28,7 @@ onMounted(async () => {
             v-for="(item, index) in dept_list"
             :key="index"
             class="list-group-item">
-          {{ index + 1 }}.
-          - <i>Наименование:</i> <b>{{ item.name }}</b> <br>
-          - <i>Примечание:</i>  {{item.description}}
+          {{ index + 1 }}. - <i>Наименование:</i> <b>{{ item.name }}</b> - <i>Примечание:</i>  {{item.description}}
         </li>
       </ul>
     </div>

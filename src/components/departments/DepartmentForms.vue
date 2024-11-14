@@ -17,9 +17,9 @@ import CreateDept from "./CreateDepartment.vue";
         <div class="item">
           <CreateDept/>
         </div>
-        <div class="item">
-          <GetForm/>
-        </div>
+<!--        <div class="item">-->
+<!--          <GetForm/>-->
+<!--        </div>-->
       </div>
     </template>
   </WelcomeItem>

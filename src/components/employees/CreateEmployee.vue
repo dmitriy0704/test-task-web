@@ -1,6 +1,6 @@
 <script>
 import axios from 'axios'
-import { ref } from 'vue'
+import {ref} from 'vue'
 
 export default {
   name: 'CreateEmployee',
@@ -9,6 +9,7 @@ export default {
     return {
       prof_list: {},
       dept_list: {},
+      empl_list: {},
       employee: {
         fio: '',
         description: '',
@@ -30,10 +31,18 @@ export default {
       );
       this.dept_list = data;
     },
+
+    async getEmployeeList() {
+      const {data} = await axios.get(
+          "http://localhost:8080/api/empl?list",
+      );
+      this.empl_list = data;
+    },
     handleSave() {
       this.isSaving = true
       axios.post('http://localhost:8080/api/empl', this.employee)
           .then(response => {
+            this.getEmployeeList()
             this.isSaving = false
             this.employee.fio = ""
             this.employee.description = ""
@@ -49,107 +58,130 @@ export default {
   beforeMount() {
     this.getProfessionList();
     this.getDepartmentList();
+    this.getEmployeeList()
   },
 
 };
 
 </script>
 
+
 <template>
-  <div class="col-md-12">
-    <h3 class="green">Создать сотрудника</h3>
+
+  <div class="create-form-flex-container">
+    <div class="flex-column">
+      <div class="col-md-12">
+        <h3 class="green">Создать сотрудника</h3>
+      </div>
+      <div class="form">
+
+        <form>
+          <div class="form-group">
+            <label htmlFor="name">ФИО</label>
+            <br/>
+            <input
+                v-model="employee.fio"
+                type="text"
+                class="form-control"
+                id="fio"
+                name="fio"/>
+            <br/>
+            <br/>
+          </div>
+
+          <div class="form-group">
+            <div> Профессия:</div>
+            <select v-model="employee.profession">
+              <option disabled value="">Выберете профессию</option>
+              <option v-for="(item, index) in prof_list"
+                      :key="index"
+                      class="list-group-item">
+                {{ item.name }}
+              </option>
+            </select>
+            <input
+                style="display: none"
+                v-model="employee.profession"
+                type="text"
+                class="form-control"
+                id="profession"
+                name="profession"/>
+            <br/>
+            <br/>
+          </div>
+
+
+          <div class="form-group">
+            <div> Отдел:</div>
+            <select v-model="employee.department">
+              <option disabled value="">Выберете отдел</option>
+              <option v-for="(item, index) in dept_list"
+                      :key="index"
+                      class="list-group-item">
+                {{ item.name }}
+              </option>
+            </select>
+            <input
+                style="display: none"
+                v-model="employee.department"
+                type="text"
+                class="form-control"
+                id="profession"
+                name="profession"/>
+            <br/>
+            <br/>
+          </div>
+
+
+          <div class="form-group">
+            <label htmlFor="name">Примечание</label>
+            <br/>
+            <input
+                v-model="employee.description"
+                type="text"
+                class="form-control"
+                id="description"
+                name="description"/>
+            <br/>
+            <br/>
+          </div>
+          <div class="form-group">
+            <button
+                @click="handleSave()"
+                :disabled="isSaving"
+                type="button"
+                class="btn btn-outline-primary mt-3">
+              Создать
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+    <div class="flex-column">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="green">Все сотрудники</h3>
+        </div>
+        <div class="col-md-6">
+          <ul class="list-group">
+            <li style="list-style: none; padding-bottom: 15px;" v-for="(item, index) in empl_list"
+                :key="index"
+                class="list-group-item">
+              {{ index + 1 }}.
+              - <i>ФИО:</i> <b>{{ item.fio }}</b>
+              - <i>Профессия:</i> <b>{{ item.profession }}</b>
+              - <i>Отдел:</i> <b>{{ item.department }}</b>
+              - <i>Примечание:</i>  {{item.description}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="form">
-
-      <form>
-        <div class="form-group">
-          <label htmlFor="name">ФИО</label>
-          <br/>
-          <input
-              v-model="employee.fio"
-              type="text"
-              class="form-control"
-              id="fio"
-              name="fio"/>
-          <br/>
-          <br/>
-        </div>
-
-        <div class="form-group">
-          <div> Профессия: </div>
-          <select v-model="employee.profession">
-            <option disabled value="">Выберете профессию</option>
-            <option v-for="(item, index) in prof_list"
-                    :key="index"
-                    class="list-group-item">
-              {{item.name}}
-            </option>
-          </select>
-          <input
-              style="display: none"
-              v-model="employee.profession"
-              type="text"
-              class="form-control"
-              id="profession"
-              name="profession"/>
-          <br/>
-          <br/>
-        </div>
-
-
-        <div class="form-group">
-          <div> Отдел: </div>
-          <select v-model="employee.department">
-            <option disabled value="">Выберете отдел</option>
-            <option v-for="(item, index) in dept_list"
-                    :key="index"
-                    class="list-group-item">
-              {{item.name}}
-            </option>
-          </select>
-          <input
-              style="display: none"
-              v-model="employee.department"
-              type="text"
-              class="form-control"
-              id="profession"
-              name="profession"/>
-          <br/>
-          <br/>
-        </div>
 
 
 
-
-
-
-
-
-
-        <div class="form-group">
-          <label htmlFor="name">Примечание</label>
-          <br/>
-          <input
-              v-model="employee.description"
-              type="text"
-              class="form-control"
-              id="description"
-              name="description"/>
-          <br/>
-          <br/>
-        </div>
-        <div class="form-group">
-          <button
-              @click="handleSave()"
-              :disabled="isSaving"
-              type="button"
-              class="btn btn-outline-primary mt-3">
-            Создать
-          </button>
-        </div>
-      </form>
-
-  </div>
 
 </template>
 

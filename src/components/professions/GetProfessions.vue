@@ -33,7 +33,7 @@ onMounted(async () => {
             :key="index"
             class="list-group-item">
           {{ index + 1 }}.
-          - <i>Наименование:</i> <b>{{ item.name }}</b> <br>
+          - <i>Наименование:</i> <b>{{ item.name }}</b>
           - <i>Примечание:</i>  {{item.description}}
         </li>
       </ul>

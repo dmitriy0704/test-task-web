@@ -1,0 +1,10 @@
+.create-form-flex-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.create-form-flex-container .flex-column{
+  min-width: 250px;
+}
