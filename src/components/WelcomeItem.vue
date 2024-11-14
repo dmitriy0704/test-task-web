@@ -28,7 +28,8 @@
 }
 
 i {
-  display: flex;
+  display: none;
+  //display: flex;
   place-items: center;
   place-content: center;
   width: 32px;
@@ -46,6 +47,7 @@ h3 {
 
 @media (min-width: 1024px) {
   .item {
+
     margin-top: 0;
     padding: 0.4rem 0 1rem calc(var(--section-gap) / 2);
   }

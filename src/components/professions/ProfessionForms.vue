@@ -8,7 +8,7 @@ import CreateForm from "./CreateProfession.vue";
   <WelcomeItem>
     <template #heading>
       <div class="head">
-        <h2>Профессии</h2>
+        <h2 class="green">Профессии</h2>
       </div>
     </template>
 

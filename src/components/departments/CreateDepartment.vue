@@ -83,7 +83,7 @@ export default {
             @click="handleSave()"
             :disabled="isSaving"
             type="button"
-            class="btn btn-outline-primary mt-3">
+            class="green">
           Создать
         </button>
       </form>
@@ -101,8 +101,11 @@ export default {
                 v-for="(item, index) in dept_list"
                 :key="index"
                 class="list-group-item">
-              {{ index + 1 }}. - <i>Наименование:</i> <b>{{ item.name }}</b> -
-              <i>Примечание:</i> {{ item.description }}
+              {{ index + 1 }}. <span class="green"><i>Наименование:</i></span>
+              <b>{{ item.name }}</b>
+              <br>
+              <span class="green"> <i>&nbsp;&nbsp;&nbsp;&nbsp;Примечание:</i> </span>
+              {{ item.description }}
             </li>
           </ul>
         </div>

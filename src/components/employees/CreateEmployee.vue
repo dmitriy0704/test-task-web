@@ -125,20 +125,26 @@ export default {
                 name="profession"/>
           </div>
           <div class="form-group">
-            <label htmlFor="name">Примечание</label>
-            <input
-                v-model="employee.description"
-                type="text"
-                class="form-control"
-                id="description"
-                name="description"/>
+            <div>
+              <label htmlFor="name">Примечание</label>
+            </div>
+            <div>
+
+              <input
+                  v-model="employee.description"
+                  type="text"
+                  class="form-control"
+                  id="description"
+                  name="description"/>
+            </div>
+
           </div>
           <div class="form-group">
             <button
                 @click="handleSave()"
                 :disabled="isSaving"
                 type="button"
-                class="btn btn-outline-primary mt-3">
+                class="green">
               Создать
             </button>
           </div>
@@ -157,10 +163,17 @@ export default {
                 :key="index"
                 class="list-group-item">
               {{ index + 1 }}.
-              - <i>ФИО:</i> <b>{{ item.fio }}</b>
-              - <i>Профессия:</i> <b>{{ item.profession }}</b>
-              - <i>Отдел:</i> <b>{{ item.department }}</b>
-              - <i>Примечание:</i> {{ item.description }}
+
+              <span class="green"><i>ФИО:</i> </span>
+                      <b>{{ item.fio }}</b> <br>
+              <span class="green"><i>&nbsp;&nbsp;&nbsp;&nbsp;Профессия:</i></span>
+                      <b>{{item.profession }}</b><br>
+              <span class="green"><i>&nbsp;&nbsp;&nbsp;&nbsp;Отдел:</i></span><b>
+                      {{item.department }}</b><br>
+              <span class="green"><i>&nbsp;&nbsp;&nbsp;&nbsp;Примечание:</i></span>
+                      <b>{{ item.description }}</b>
+
+
             </li>
           </ul>
         </div>

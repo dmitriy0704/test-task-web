@@ -8,7 +8,7 @@ import CreateDept from "./CreateDepartment.vue";
   <WelcomeItem>
     <template #heading>
       <div class="head">
-        <h2>Отделы</h2>
+        <h2 class="green">Отделы</h2>
       </div>
     </template>
     <template #default>

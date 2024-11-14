@@ -8,7 +8,7 @@ import CreateForm from "../employees/CreateEmployee.vue";
   <WelcomeItem>
     <template #heading>
       <div class="head">
-        <h2>Сотрудники</h2>
+        <h2 class="green"> Сотрудники</h2>
       </div>
     </template>
     <template #default>
